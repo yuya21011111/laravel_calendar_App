@@ -14,4 +14,8 @@
             </div>
         </div>
     </div>
+    <div>
+        <p class="text-primary">Laravel!!</p>
+        <p class="text-success">Laravel!!</p>
+    </div>
 </x-app-layout>
