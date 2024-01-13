@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ScheduleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/schedule',[ScheduleController::class, 'index'])->name('schedule');
+Route::get('/schedule/store',[ScheduleController::class, 'store'])->name('schedule.store');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
