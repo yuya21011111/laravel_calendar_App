@@ -19,8 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/schedule',[ScheduleController::class, 'index'])->name('schedule');
-Route::get('/schedule/store',[ScheduleController::class, 'store'])->name('schedule.store');
 
 
 Route::get('/dashboard', function () {
@@ -31,6 +29,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // Schedule
+
+    Route::get('/schedule',[ScheduleController::class, 'index'])->name('schedule');
+    Route::post('/schedule/store',[ScheduleController::class, 'store'])->name('schedule.store');
 });
 
 require __DIR__.'/auth.php';

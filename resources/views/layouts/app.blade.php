@@ -27,6 +27,11 @@
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
+            
+            @if(session('messsage'))
+              <div id="hideableDiv" class="alert alert-success text-center">{{ session('messsage') }}</div>
+            @endif
+            
 
             <!-- Page Heading -->
             @if (isset($header))
@@ -42,5 +47,11 @@
                 {{ $slot }}
             </main>
         </div>
+        <script>
+            // 対象となる div 要素にイベントリスナーを追加します
+            document.getElementById('hideableDiv').addEventListener('click', function() {
+                this.style.display = 'none'; // div を非表示にします
+            });
+        </script>
     </body>
 </html>
