@@ -1,4 +1,5 @@
 <x-app-layout>
+    <section class="mt-8">
     <form method="POST" action="{{ route('schedule.store') }}">
         @csrf
 
@@ -35,4 +36,5 @@
             </x-primary-button>
         </div>
     </form>
+    </section>
 </x-app-layout>
