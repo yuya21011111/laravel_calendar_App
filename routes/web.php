@@ -31,7 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // Schedule
-
+    Route::get('/',[ScheduleController::class, 'schedule'])->name('schedule.index');
     Route::get('/schedule',[ScheduleController::class, 'index'])->name('schedule');
     Route::post('/schedule/store',[ScheduleController::class, 'store'])->name('schedule.store');
 });

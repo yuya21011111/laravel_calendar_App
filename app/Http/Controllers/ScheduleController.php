@@ -15,6 +15,10 @@ class ScheduleController extends Controller
         return  view('front.schedule');
     }
 
+    public function schedule(){
+        return view('front.index');
+    }
+
     // storeメソッドは、新しいスケジュール項目の保存を処理する責任を持ちます。
     public function store(Request $request) {
         // Scheduleモデルの新しいインスタンスを作成します。

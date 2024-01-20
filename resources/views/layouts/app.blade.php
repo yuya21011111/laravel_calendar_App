@@ -53,5 +53,7 @@
                 this.style.display = 'none'; // div を非表示にします
             });
         </script>
+
+        @yield('script')
     </body>
 </html>
