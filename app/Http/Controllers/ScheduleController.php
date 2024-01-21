@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Schedule;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 // ScheduleControllerはLaravelによって提供される基本のControllerクラスを拡張しています。
@@ -16,7 +17,19 @@ class ScheduleController extends Controller
     }
 
     public function schedule(){
-        return view('front.index');
+        $schedules = Schedule::all();
+        $events = [];
+        foreach($schedules as $schedule) {
+            $events[] = [
+                'id' => $schedule->id,
+                'title' => $schedule->title,
+                'description' => $schedule->description,
+                'start' => $schedule->start_date,
+                'end' => Carbon::parse($schedule->end_date)->addDay()->format('Y-m-d'),
+            ];
+        }
+        // dd($events);
+        return view('front.index',compact('events'));
     }
 
     // storeメソッドは、新しいスケジュール項目の保存を処理する責任を持ちます。

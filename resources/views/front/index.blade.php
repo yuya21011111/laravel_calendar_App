@@ -20,9 +20,11 @@
 <script>
 
   document.addEventListener('DOMContentLoaded', function() {
+   const events = @json($events);
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth'
+      initialView: 'dayGridMonth',
+      events: events
     });
     calendar.render();
   });
