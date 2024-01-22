@@ -24,7 +24,15 @@
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
-      events: events
+      events: events,
+      locale: 'ja',
+      height: '500px',
+      firstDay: 1,
+      headerToolbar: {
+        left: "dayGridMonth, timeGridWeek, timeGridDay, listWeek",
+        center: "title",
+        right: "today prev, next"
+      }
     });
     calendar.render();
   });
