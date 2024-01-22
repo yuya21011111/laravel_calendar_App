@@ -24,8 +24,8 @@ class ScheduleController extends Controller
                 'id' => $schedule->id,
                 'title' => $schedule->title,
                 'description' => $schedule->description,
-                'start' => $schedule->start_date,
-                'end' => Carbon::parse($schedule->end_date)->addDay()->format('Y-m-d'),
+                'start' => $schedule->start_date, // start_time
+                'end' => Carbon::parse($schedule->end_date)->addDay()->format('Y-m-d'), // end_time
             ];
         }
         // dd($events);
