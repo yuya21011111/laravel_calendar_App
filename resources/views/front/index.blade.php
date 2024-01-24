@@ -32,7 +32,15 @@
         left: "dayGridMonth, timeGridWeek, timeGridDay, listWeek",
         center: "title",
         right: "today prev, next"
-      }
+      },
+      buttonText: {
+        today: '今月',
+        month: '月間',
+        week: '週間',
+        day: '日間',
+        list: 'リスト'
+      },
+      noEventsContent: 'スケジュールはありません。',
     });
     calendar.render();
   });
