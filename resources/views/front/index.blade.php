@@ -41,6 +41,8 @@
         list: 'リスト'
       },
       noEventsContent: 'スケジュールはありません。',
+      fixedWeekCount: false,
+      showNonCurrentDates: false,
     });
     calendar.render();
   });
