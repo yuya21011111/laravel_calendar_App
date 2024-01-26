@@ -26,6 +26,9 @@ class ScheduleController extends Controller
                 'description' => $schedule->description,
                 'start' => $schedule->start_date, // start_time
                 'end' => Carbon::parse($schedule->end_date)->addDay()->format('Y-m-d'), // end_time
+                'backgroundColor' => 'green',
+                'textColor' => 'yellow',
+                'borderColor' => 'black',
             ];
         }
         // dd($events);
