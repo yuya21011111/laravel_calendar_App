@@ -17,17 +17,32 @@
         </div>
 
           <!-- Start_date -->
-          <div>
-            <x-input-label for="start_date" :value="__('開始時間')" />
+        <div>
+            <x-input-label for="start_date" :value="__('開始日')" />
             <x-text-input id="start_date" class="block mt-1 w-full" type="date" name="start_date" :value="old('start_date')" required autofocus autocomplete="start_date" />
             <x-input-error :messages="$errors->get('start_date')" class="mt-2" />
         </div>
 
+          <!-- Start_time -->
+          <div>
+            <x-input-label for="start_time" :value="__('開始時間')" />
+            <x-text-input id="start_time" class="block mt-1 w-full" type="time" name="start_time" :value="old('start_time')" required autofocus autocomplete="start_time" />
+            <x-input-error :messages="$errors->get('start_time')" class="mt-2" />
+        </div>
+
+
           <!-- End_date -->
           <div>
-            <x-input-label for="end_date" :value="__('終了時間')" />
+            <x-input-label for="end_date" :value="__('終了日')" />
             <x-text-input id="end_date" class="block mt-1 w-full" type="date" name="end_date" :value="old('end_date')" required autofocus autocomplete="end_date" />
             <x-input-error :messages="$errors->get('end_date')" class="mt-2" />
+        </div>
+
+         <!-- End_time -->
+         <div>
+            <x-input-label for="end_time" :value="__('終了時間')" />
+            <x-text-input id="end_time" class="block mt-1 w-full" type="time" name="end_time" :value="old('end_time')" required autofocus autocomplete="end_time" />
+            <x-input-error :messages="$errors->get('end_time')" class="mt-2" />
         </div>
 
         <div class="flex items-center justify-end mt-4">

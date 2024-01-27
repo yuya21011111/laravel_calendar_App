@@ -17,7 +17,9 @@ return new class extends Migration
             $table->string('title')->comment('タイトル');
             $table->string('description')->nullable()->comment('概要');
             $table->date('start_date')->comment('開始日');
+            $table->string('start_time')->comment('開始時間');
             $table->date('end_date')->comment('終了日');
+            $table->string('end_time')->comment('終了時間');
             $table->timestamps();
         });
     }
