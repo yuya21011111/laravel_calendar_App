@@ -53,6 +53,17 @@
       noEventsContent: 'スケジュールはありません。',
       fixedWeekCount: false,
       showNonCurrentDates: false,
+
+      eventMouseEnter(info){
+       $(info.el).popover({
+        title: info.event.title,
+        content: info.event.extendedProps.description,
+        trigger: 'hover',
+        placement: 'top',
+        container: 'body',
+        html: true
+       })
+      },
     });
     calendar.render();
   });
