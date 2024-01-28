@@ -16,6 +16,16 @@
     </div>
 </x-app-layout>
 @section('script')
+<style>
+    .fc-col-header-cell.fc-day-sat {
+        background-color: #cce3f6;
+    }
+
+    .fc-col-header-cell.fc-day-sun {
+        background-color: #f4d0df;
+    }
+
+</style>
 <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
 <script>
 
