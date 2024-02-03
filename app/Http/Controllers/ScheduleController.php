@@ -53,6 +53,7 @@ class ScheduleController extends Controller
                 'backgroundColor' => 'green',
                 'textColor' => 'yellow',
                 'borderColor' => 'black',
+                'url' => route('schedule.edit', $schedule->id),
             ];
         }
         // dd($events);

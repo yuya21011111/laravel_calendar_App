@@ -34,6 +34,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/',[ScheduleController::class, 'schedule'])->name('schedule.index');
     Route::get('/schedule',[ScheduleController::class, 'index'])->name('schedule');
     Route::post('/schedule/store',[ScheduleController::class, 'store'])->name('schedule.store');
+    Route::get('/schedule/{id}/edit',[ScheduleController::class, 'edit'])->name('schedule.edit');
+
 });
 
 require __DIR__.'/auth.php';
