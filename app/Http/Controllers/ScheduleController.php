@@ -102,4 +102,21 @@ class ScheduleController extends Controller
        $schedule = Schedule::findOrFail($id);
        return view('front.edit',compact('schedule'));
     }
+
+    public function update(Request $request, $id) {
+        $schedule = Schedule::findOrFail($id);
+
+        $schedule->title = $request->title;
+        $schedule->description = $request->description;
+        $schedule->start_date = $request->start_date;
+        $schedule->start_time = $request->start_time;
+        $schedule->end_date = $request->end_date;
+        $schedule->end_time = $request->end_time;
+
+        $schedule->save();
+
+        return redirect()
+        ->route('schedule.index');
+
+    }
 }

@@ -1,6 +1,6 @@
 <x-app-layout>
     <section class="mt-8">
-    <form method="POST" action="">
+    <form method="POST" action="{{ route('schedule.update', ['id' => $schedule->id])}}">
         @csrf
 
         <!-- Name -->

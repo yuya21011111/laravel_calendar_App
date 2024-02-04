@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/schedule',[ScheduleController::class, 'index'])->name('schedule');
     Route::post('/schedule/store',[ScheduleController::class, 'store'])->name('schedule.store');
     Route::get('/schedule/{id}/edit',[ScheduleController::class, 'edit'])->name('schedule.edit');
-    Route::post('/schedule/{id}/update',[ScheduleController::class, 'update'])->name('schedule.update');
+    Route::post('/schedule/update/{id}',[ScheduleController::class, 'update'])->name('schedule.update');
 
 });
 
