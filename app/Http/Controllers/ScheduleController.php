@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Schedule;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Expr\FuncCall;
 
 // ScheduleControllerはLaravelによって提供される基本のControllerクラスを拡張しています。
 class ScheduleController extends Controller
@@ -94,5 +95,11 @@ class ScheduleController extends Controller
         return redirect()
             ->route('schedule')
             ->with('messsage', '登録しました。'); // 「登録しました。」は「Registration completed.」の意味です。
+    }
+
+    public function edit ($id) 
+    {
+       $schedule = Schedule::findOrFail($id);
+       return view('front.edit',compact('schedule'));
     }
 }
