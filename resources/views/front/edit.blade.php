@@ -46,8 +46,8 @@
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            <x-primary-button class="ms-4">
-                登録
+            <x-primary-button class="ms-4 bg-red-500">
+                更新
             </x-primary-button>
         </div>
     </form>

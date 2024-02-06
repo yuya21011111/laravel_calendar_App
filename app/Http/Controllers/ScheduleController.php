@@ -116,7 +116,8 @@ class ScheduleController extends Controller
         $schedule->save();
 
         return redirect()
-        ->route('schedule.index');
+        ->route('schedule.index')
+        ->with('messsage', '更新しました。');
 
     }
 }
