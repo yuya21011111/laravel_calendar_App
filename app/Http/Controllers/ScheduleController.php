@@ -97,15 +97,27 @@ class ScheduleController extends Controller
             ->with('messsage', '登録しました。'); // 「登録しました。」は「Registration completed.」の意味です。
     }
 
-    public function edit ($id) 
+    public function edit($id) 
     {
-       $schedule = Schedule::findOrFail($id);
-       return view('front.edit',compact('schedule'));
-    }
-
-    public function update(Request $request, $id) {
+        // IDでスケジュールを探し、見つからない場合は404エラーを返します。
         $schedule = Schedule::findOrFail($id);
 
+        // スケジュール項目を渡して編集ビューを返します。
+        return view('front.edit', compact('schedule'));
+    }
+
+    /**
+     * 保存されている指定されたスケジュールを更新します。
+     *
+     * @param \Illuminate\Http\Request $request 更新データを含んだリクエストオブジェクトです。
+     * @param int $id 更新するスケジュールのIDです。
+     * @return \Illuminate\Http\RedirectResponse 成功メッセージとともにスケジュールインデックスルートへリダイレクトします。
+     */
+    public function update(Request $request, $id) {
+        // IDでスケジュールを探し、見つからない場合は404エラーを返します。
+        $schedule = Schedule::findOrFail($id);
+
+        // リクエストからの新しい値をスケジュールに割り当てます。
         $schedule->title = $request->title;
         $schedule->description = $request->description;
         $schedule->start_date = $request->start_date;
@@ -113,11 +125,12 @@ class ScheduleController extends Controller
         $schedule->end_date = $request->end_date;
         $schedule->end_time = $request->end_time;
 
+        // データベースに更新されたスケジュールを保存します。
         $schedule->save();
 
+        // 成功メッセージを持ってスケジュールのインデックスページにリダイレクトします。
         return redirect()
-        ->route('schedule.index')
-        ->with('messsage', '更新しました。');
-
+            ->route('schedule.index')
+            ->with('messsage', '更新しました。'); // 「更新しました。」は日本語で「正常に更新されました」という意味です。
     }
 }
